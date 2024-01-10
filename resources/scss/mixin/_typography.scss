@@ -1,0 +1,46 @@
+@use "../abstracts/colors";
+
+@mixin strip-text($size: 16px, $color: colors.$text-color) {
+    display: flex;
+    width: max-content;
+    gap: 8px;
+    align-items: center;
+    .text {
+        color: $color;
+        font-weight: 500;
+        font-size: $size;
+    }
+    .strip {
+        width: 31px;
+        height: 2px;
+        display: block;
+        background-color: colors.$warning;
+        border-radius: 2px;
+    }
+}
+
+@mixin title($size: 16px, $color: colors.$text-color) {
+    font-size: $size;
+    color: $color;
+    margin: 16px 0px;
+    max-width: 24ch;
+    font-weight: 600;
+    line-height: 160%;
+    white-space: nowrap;
+}
+
+@mixin subtitle($size: 16px, $color: colors.$text-color) {
+    font-size: $size;
+    line-height: 160%;
+    font-weight: 400;
+    color: $color;
+    margin: 6px 0px;
+}
+
+@mixin paragraph($size: 16px, $color: colors.$text-color) {
+    font-size: $size;
+    line-height: 160%;
+    font-weight: 300;
+    color: $color;
+    margin: 8px 0px;
+}

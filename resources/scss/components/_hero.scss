@@ -1,0 +1,129 @@
+@use "../abstracts/colors";
+@use "../abstracts/breakpoints";
+@use "../mixin/media-query";
+@use "../mixin/typography";
+
+.hero {
+    background-color: colors.$primary;
+    height: calc(100vw / 1.92);
+    min-height: 56vh;
+    background-image: url("/public/assets/images/hero-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom -140px;
+    background-size: 60vw auto;
+
+    .container {
+        display: flex;
+        max-width: 1400px;
+        padding: 0px 107px;
+        margin: 0px auto;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .hero-text-wrapper {
+        display: flex;
+        align-items: center;
+        height: calc(100vw / 1.92);
+        min-height: 60vh;
+        position: relative;
+        h1 {
+            @include typography.title(40px, colors.$text-light);
+        }
+
+        p {
+            font-size: 22px;
+            color: colors.$text-light;
+            max-width: 42ch;
+            font-weight: 400;
+            margin-bottom: 36px;
+        }
+    }
+
+    .hero-image-wrapper {
+        width: 40vw;
+        min-height: 56vh;
+
+        .hero-image {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 44vw;
+            min-width: 420px;
+            min-height: 570px;
+            object-fit: cover;
+            border-bottom-left-radius: 72px;
+        }
+    }
+
+    .strip-text {
+        @include typography.strip-text(16px, colors.$text-light);
+    }
+
+    @include media-query.min(breakpoints.$xl) {
+        .cta-button::after {
+            content: "Scroll";
+            display: block;
+            position: absolute;
+            left: -96px;
+            height: auto;
+            transform: rotate(90deg);
+            color: colors.$text-light;
+            font-size: 22px;
+            font-weight: 300;
+            padding-bottom: 40px;
+            background-image: url("/public/assets/icons/ic-arrow-right-white.svg");
+            background-repeat: no-repeat;
+            background-size: 32px;
+            background-position: top right;
+            padding-right: 40px;
+            margin-top: 32px;
+        }
+    }
+
+    @include media-query.max(breakpoints.$xl) {
+        background-position: left bottom -100px;
+        background-size: 60vw auto;
+        .container {
+            padding: 0px 40px;
+        }
+        .hero-text-wrapper {
+            font-size: 24px;
+            max-width: 20ch;
+            h1 {
+                @include typography.title(25px, colors.$text-light);
+            }
+            p {
+                font-size: 16px;
+                max-width: 30ch;
+            }
+        }
+    }
+    @include media-query.max(breakpoints.$lg) {
+        background-position: left bottom -100px;
+        background-size: contain;
+        .strip-text {
+            @include typography.strip-text(14px, colors.$text-light);
+        }
+    }
+
+    @include media-query.max(breakpoints.$md) {
+        height: 100vh;
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.527),
+                rgba(0, 0, 0, 0.5)
+            ),
+            url("/public/assets/images/hotel.svg");
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .hero-image-wrapper {
+            display: none;
+        }
+        .hero-text-wrapper {
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+        }
+    }
+}

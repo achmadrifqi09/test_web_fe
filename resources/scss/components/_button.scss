@@ -1,0 +1,49 @@
+@use "../abstracts/colors";
+@use "../abstracts/breakpoints";
+@use "../mixin/media-query";
+
+.cta-button {
+    padding: 17px 55px;
+    border: none;
+    border-radius: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: colors.$warning;
+}
+
+.button-primary {
+    border: none;
+    padding: 10px 32px;
+    font-weight: 400;
+    background-color: colors.$warning;
+    border-radius: 32px;
+    font-size: 17px;
+}
+
+.button-submit {
+    border: none;
+    padding: 16px 32px;
+    font-weight: 400;
+    background-color: colors.$warning;
+    border-radius: 32px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+@include media-query.min(breakpoints.$xl) {
+    .cta-button {
+        font-size: 22px;
+    }
+}
+
+@include media-query.max(breakpoints.$md) {
+    .button-submit {
+        font-size: 16px;
+        padding: 12px 26px;
+    }
+}

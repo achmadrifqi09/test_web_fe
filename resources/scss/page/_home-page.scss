@@ -1,0 +1,612 @@
+@use "../mixin/typography";
+@use "../abstracts/colors";
+@use "../abstracts/breakpoints";
+@use "../components";
+@use "../mixin/media-query";
+
+.workflow {
+    background-image: url("/public/assets/images/line.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top right;
+    padding-top: 96px;
+    cursor: url("/public/assets/images/rounded-cursor.svg"), auto;
+    .container {
+        max-width: breakpoints.$xxl;
+        padding: 0px 107px;
+        margin: 0px auto;
+        .strip-text {
+            @include typography.strip-text(17px, colors.$text);
+        }
+
+        .title {
+            @include typography.title(32px, colors.$text);
+        }
+        .workflow-items {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            gap: 32px;
+
+            .rounded-icon-wrapper {
+                background-color: colors.$text-light;
+                padding: 24px;
+                box-shadow: 2px;
+                margin-bottom: 24px;
+                width: max-content;
+                height: max-content;
+                border-radius: 100%;
+                box-shadow: 0px 0px 48px -10px rgba(250, 196, 104, 0.282);
+            }
+            .workflow-item {
+                .paragraph {
+                    @include typography.paragraph(14px, colors.$text);
+                }
+                .workflow-icon {
+                    width: 100%;
+                }
+            }
+
+            .workflow-item:nth-child(1) {
+                padding-top: 20%;
+            }
+
+            .workflow-item:nth-child(2) {
+                padding-top: 13%;
+            }
+
+            .workflow-item:nth-child(3) {
+                padding-top: 14%;
+            }
+
+            .workflow-item:nth-child(4) {
+                padding-top: 8%;
+            }
+        }
+
+        @include media-query.max(1630px) {
+            .workflow-items {
+                .workflow-item:nth-child(1) {
+                    padding-top: 13%;
+                }
+
+                .workflow-item:nth-child(2) {
+                    padding-top: 8%;
+                }
+
+                .workflow-item:nth-child(3) {
+                    padding-top: 10%;
+                }
+                .workflow-item:nth-child(4) {
+                  padding-top:1%;
+                }
+            }
+        }
+
+        @include media-query.max(1440px) {
+            .workflow-items {
+                .workflow-item:nth-child(1) {
+                    padding-top: 10%;
+                }
+                .workflow-item:nth-child(2) {
+                    padding-top: 6%;
+                }
+
+                .workflow-item:nth-child(3) {
+                    padding-top: 6%;
+                }
+                .workflow-item:nth-child(4) {
+                    padding: 0px;
+                    position: relative;
+                    top: -32px;
+                }
+            }
+        }
+
+        @include media-query.max(breakpoints.$xl) {
+            .title {
+                @include typography.title(20px, colors.$text);
+            }
+            .workflow-items {
+                .workflow-item:nth-child(1) {
+                    padding-top: 14%;
+                }
+
+                .workflow-item:nth-child(2) {
+                    padding-top: 12%;
+                }
+
+                .workflow-item:nth-child(3) {
+                    padding-top: 10%;
+                }
+                .workflow-item:nth-child(4) {
+                    padding-top: 9%;
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$lg) {
+            .workflow-items {
+                .workflow-item:nth-child(1) {
+                    position: relative;
+                    top: -56px;
+                }
+
+                .workflow-item:nth-child(2) {
+                    position: relative;
+                    top: -56px;
+                }
+
+                .workflow-item:nth-child(3) {
+                    position: relative;
+                    top: -48px;
+                }
+                .workflow-item:nth-child(4) {
+                    position: relative;
+                    top: -120px;
+                }
+            }
+        }
+    }
+
+    @include media-query.max(breakpoints.$xl) {
+        background-position: right -24px top 120px;
+        .container {
+            padding: 0px 40px;
+        }
+    }
+
+    @include media-query.max(breakpoints.$md) {
+        background-image: none;
+        .container {
+            .workflow-items {
+                flex-direction: column;
+                gap: 0px;
+                margin-top: 40px;
+                .workflow-item {
+                    position: static;
+                    padding: 0px;
+                    top: 0px;
+                    display: flex;
+                    justify-items: center;
+                    gap: 16px;
+                }
+                .workflow-item:nth-child(4) {
+                    top: 0px;
+                }
+            }
+        }
+    }
+}
+
+.service {
+    margin: 80px 0px;
+    background-color: colors.$light;
+    padding: 80px 0px;
+    background-image: url("/public/assets/images/section-pattern.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+    .container {
+        max-width: breakpoints.$xxl;
+        padding: 0px 107px;
+        margin: 0px auto;
+        .strip-text {
+            @include typography.strip-text(17px, colors.$text);
+        }
+        .title {
+            @include typography.title(32px, colors.$text);
+        }
+
+        .service-items {
+            overflow-y: hidden;
+            overflow-x: scroll;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(min(240px, 100%), 1fr));
+            gap: 32px;
+            scrollbar-width: none;
+            .service-item {
+                padding: 37px 40px;
+                background-color: colors.$text-light;
+                height: auto;
+                border-radius: 24px;
+                border: solid 1px colors.$border;
+
+                min-width: 220px;
+                .service-header {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    gap: 24px;
+                    .service-number {
+                        text-align: end;
+                        color: colors.$warning;
+                        font-size: 26px;
+                    }
+                    img {
+                        width: 124px;
+                    }
+                }
+                .service-title {
+                    @include typography.title(18px, colors.$text);
+                }
+                .button-primary {
+                    gap: 14px;
+                    display: flex;
+                    align-items: center;
+                    white-space: nowrap;
+                    img {
+                        width: 24px;
+                    }
+                }
+                @include media-query.min(breakpoints.$xxl) {
+                    .service-title {
+                        font-size: 26px;
+                    }
+                }
+                @include media-query.max(breakpoints.$xl) {
+                    min-width: 80px;
+                    padding: 24px;
+                    .button-primary {
+                        font-size: 14px;
+                    }
+                }
+                @include media-query.max(breakpoints.$lg) {
+                    .service-header {
+                        img {
+                            width: 80px;
+                        }
+                    }
+                    .button-primary {
+                        padding: 6px 14px;
+                    }
+                }
+            }
+        }
+        .service-items::-webkit-scrollbar {
+            display: none;
+        }
+        @include media-query.max(breakpoints.$lg) {
+            padding: 0px 40px;
+            .service-items {
+                gap: 16px;
+            }
+        }
+    }
+}
+
+.project {
+    .container {
+        max-width: breakpoints.$xxl;
+        padding: 0px 107px;
+        margin: 0px auto;
+        margin-bottom: 80px;
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 58px;
+            .strip-text {
+                @include typography.strip-text(17px, colors.$text);
+            }
+            .title {
+                @include typography.title(32px, colors.$text);
+            }
+        }
+        .project-items {
+            .swpiper-button {
+                background-color: colors.$warning;
+                width: 48px;
+                height: 48px;
+                padding: 8px;
+                border-radius: 48px;
+                color: colors.$text;
+            }
+            .swiper-button-next {
+                right: 4px;
+            }
+            .swiper-button-prev {
+                left: 4px;
+            }
+            .swiper-wrapper {
+                height: max-content;
+                .project-item {
+                    width: 100%;
+                    position: relative;
+                    .project-image {
+                        filter: opacity(0.2);
+                        width: 100%;
+                        border-radius: 52px;
+                        min-height: 220px;
+                        object-fit: cover;
+                    }
+                    .project-content {
+                        border-radius: 52px;
+                        position: absolute;
+                        flex-direction: column;
+                        top: 0px;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: start;
+                        justify-content: center;
+                        padding: 24px 110px;
+                        text-align: left;
+                        box-sizing: border-box;
+                        .title {
+                            @include typography.title(40px, colors.$text);
+                            margin: 0px;
+                        }
+                        .subtitle {
+                            @include typography.subtitle(18px, colors.$text);
+                        }
+                        .description {
+                            @include typography.paragraph(28px, colors.$text);
+                        }
+                        .project-detail {
+                            display: flex;
+                            width: 100%;
+                            justify-content: end;
+                        }
+                        .button-detail {
+                            display: flex;
+                            align-items: center;
+                            gap: 16px;
+                            font-size: 24px;
+                            color: colors.$text;
+                            img {
+                                width: 36px;
+                                border-radius: 36px;
+                                padding: 8px;
+                                background-color: colors.$text;
+                            }
+                        }
+                        @include media-query.max(breakpoints.$lg) {
+                            .title {
+                                font-size: 26px;
+                            }
+                            .subtitle {
+                                font-size: 16px;
+                            }
+                            .description {
+                                font-size: 18px;
+                            }
+                            .button-detail {
+                                font-size: 18px;
+                                img {
+                                    width: 18px;
+                                }
+                            }
+                        }
+                        @include media-query.max(breakpoints.$sm) {
+                            padding-right: 24px;
+                            padding-left: 72px;
+                        }
+                    }
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$xl) {
+            padding: 0px 40px;
+            .project-items {
+                .swpiper-button {
+                    width: 32px;
+                    height: 32px;
+                    padding: 12px;
+                    border-radius: 48px;
+                }
+                .swiper-wrapper {
+                    height: max-content;
+                    .project-item {
+                        .project-image {
+                            border-radius: 32px;
+                        }
+                        .project-content {
+                            border-radius: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.contact-us {
+    margin: 80px 0px;
+    background-image: url("/public/assets/images/contact-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    .container {
+        max-width: breakpoints.$xxl;
+        padding: 0px 107px;
+        margin: 0px auto;
+        gap: 32px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        .text-wrapper {
+            .line {
+                width: 120px;
+                height: 1px;
+                display: block;
+                background-color: colors.$border;
+            }
+            .strip-text {
+                @include typography.strip-text(17px, colors.$text);
+            }
+            .title {
+                @include typography.title(32px, colors.$text);
+            }
+
+            .paragraph {
+                @include typography.paragraph(16px, colors.$text);
+            }
+        }
+
+        .form-wrapper {
+            padding: 0px 36px;
+            form {
+                background-color: colors.$warm;
+                padding: 40px;
+                border-radius: 24px;
+            }
+
+            .button-submit {
+                img {
+                    width: 32px;
+                }
+            }
+        }
+    }
+    @include media-query.max(breakpoints.$xl) {
+        .container {
+            padding: 0px 40px;
+            .form-wrapper {
+                padding: 0px;
+            }
+        }
+    }
+
+    @include media-query.max(breakpoints.$lg) {
+        .container {
+            padding: 0px 40px;
+            .form-wrapper {
+                padding: 0px;
+            }
+            .text-wrapper {
+                .strip-text {
+                    @include typography.strip-text(14px, colors.$text);
+                }
+                .title {
+                    @include typography.title(24px, colors.$text);
+                }
+
+                .paragraph {
+                    @include typography.paragraph(14px, colors.$text);
+                }
+            }
+        }
+    }
+}
+
+.testimonial {
+    background-color: colors.$light;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        max-width: breakpoints.$xxl;
+        padding: 59px 107px;
+        align-items: center;
+        margin: 0px auto;
+        .strip-text {
+            @include typography.strip-text(17px, colors.$text);
+        }
+        .title {
+            @include typography.title(32px, colors.$text);
+        }
+        .testimonial-detail-wrapper {
+            height: max-content;
+            .testimonial-content {
+                .quotes {
+                    display: flex;
+                    align-items: start;
+                    gap: 24px;
+                    img {
+                        margin-top: 12px;
+                        width: 40px;
+                    }
+                    .paragraph {
+                        @include typography.paragraph(17px, colors.$text);
+                        max-width: 58ch;
+                    }
+                }
+            }
+        }
+        .client {
+            margin-top: 58px;
+            display: flex;
+            gap: 16px;
+            .title {
+                font-size: 21px;
+                padding: 0px;
+                margin: 0px;
+                font-weight: 500;
+            }
+            .description {
+                font-size: 17px;
+                font-weight: 300;
+            }
+            img {
+                width: 56px;
+                aspect-ratio: 1/1;
+            }
+        }
+        .testimonial-image-wrapper {
+            height: 30vw;
+            .inner-image {
+                position: absolute;
+                right: 0;
+                .button-wrapper {
+                    position: absolute;
+                    left: -64px;
+                    top: 72px;
+                    width: 120px;
+                    .button-group {
+                        background-color: colors.$primary;
+                        width: max-content;
+                        padding: 8px 16px;
+                        border-radius: 64px;
+                        button {
+                            background-color: colors.$primary;
+                            margin: 0px;
+                            padding: 0px;
+                            border: none;
+                            img {
+                                width: 48px;
+                            }
+                        }
+                    }
+                }
+                .client-image {
+                    min-width: 280px;
+                    width: 30vw;
+                    aspect-ratio: 1/1;
+                    border-radius: 40px 0px 0px 40px;
+                }
+            }
+            @include media-query.max(breakpoints.$md) {
+                height: auto;
+                display: flex;
+                justify-content: end;
+                .inner-image {
+                    position: relative;
+                    width: max-content;
+                    right: -40px;
+                    margin-top: 32px;
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$xl) {
+            padding: 59px 40px;
+            .title {
+                @include typography.title(21px, colors.$text);
+            }
+            .testimonial-image-wrapper {
+                .inner-image {
+                    .button-wrapper {
+                        top: 48px;
+                        left: -44px;
+                        .button-group {
+                            padding: 6px 12px;
+                            button {
+                                border: none;
+                                img {
+                                    width: 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
