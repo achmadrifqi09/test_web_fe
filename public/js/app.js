@@ -8,9 +8,16 @@ document.querySelector(".lang-dropdown").addEventListener("click", () => {
 });
 
 window.addEventListener("resize", function () {
+    getLanguage();
+});
+
+window.addEventListener("load", () => {
+    getLanguage();
+});
+
+const getLanguage = () => {
     let win = this;
     const lang = document.documentElement.lang;
-
     if (win.innerWidth < 768) {
         document.querySelector(".lang-text").innerText = lang.toUpperCase();
     } else {
@@ -20,7 +27,7 @@ window.addEventListener("resize", function () {
             document.querySelector(".lang-text").innerText = "English (EN)";
         }
     }
-});
+};
 
 document.querySelector(".close-lang").addEventListener("click", () => {
     document.querySelector(".lang-wrapper ul").classList.toggle("active");

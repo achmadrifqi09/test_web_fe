@@ -11,7 +11,9 @@ footer {
     background-position: bottom;
     .container {
         max-width: breakpoints.$xxl;
-        padding: 71px 107px;
+        padding: 0px 107px;
+        padding-top: 71px;
+        padding-bottom: 16px;
         margin: 0px auto;
         .footer-menu-wrapper {
             display: grid;
@@ -22,15 +24,17 @@ footer {
             border-bottom: 1px solid colors.$text-light;
             .menu {
                 .title {
-                    @include typography.title(18px, colors.$text-light);
+                    @include typography.title(21px, colors.$text-light);
+                    margin-bottom: 20px;
                 }
                 .menu-items {
                     .menu-item {
-                        margin: 8px 0px;
+                        margin: 9px 0px;
                         a {
                             color: colors.$text-light;
                             font-weight: 300;
-                            font-size: 17px;
+                            font-size: 21px;
+                            padding-bottom: 9px;
                         }
                     }
                 }
@@ -47,22 +51,23 @@ footer {
                     color: colors.$text-light;
                     font-weight: 300;
                     text-decoration: underline;
-                    margin: 14px 0px;
-                    font-size: 17px;
+                    padding: 14px 0px;
+                    font-size: 21px;
                 }
             }
             .lang-wrapper {
                 display: flex;
                 align-items: center;
                 gap: 32px;
-                img{
-                  height: 56px;
+                img {
+                    height: 56px;
                 }
                 .dropdown-language {
-                    padding: 12px 24px;
+                    padding: 17px 25px;
                     background-color: colors.$secondary;
                     border: none;
-                    border-radius: 32px;
+                    min-width: 315px;
+                    border-radius: 40px;
                     width: 100%;
                     .language {
                         background-color: colors.$secondary;
@@ -82,41 +87,116 @@ footer {
         .footer-text {
             margin-top: 61px;
             display: block;
-            font-size: 17px;
+            font-size: 21px;
             color: colors.$text-light;
             margin-bottom: 80px;
+            font-weight: 300;
         }
-        @include media-query.min(breakpoints.$xxl) {
+        @include media-query.min(1800px) {
+            .footer-brand {
+                img {
+                    width: 192px;
+                }
+            }
             .footer-menu-wrapper {
                 .menu {
                     .title {
-                        @include typography.title(21px, colors.$text-light);
+                        @include typography.title(28px, colors.$text-light);
+                        margin-bottom: 28px;
                     }
                     .menu-items {
                         .menu-item {
-                            margin: 8px 0px;
+                            margin: 13px 0px;
                             a {
-                                color: colors.$text-light;
-                                font-weight: 300;
-                                font-size: 21px;
+                                font-size: 28px;
                             }
                         }
                     }
                 }
             }
+            .footer-text {
+                font-size: 30px;
+            }
             .site-props {
                 .term-condition {
                     a {
-                        font-size: 21px;
+                        font-size: 28px;
                     }
                 }
-            }
-            .footer-text {
-                font-size: 21px;
+                .lang-wrapper {
+                    img {
+                        height: 60px;
+                    }
+                    .dropdown-language {
+                        min-width: 350px;
+                        .language {
+                            font-size: 28px;
+                        }
+                    }
+                }
             }
         }
         @include media-query.max(breakpoints.$xl) {
             padding: 32px 40px;
+            .footer-brand {
+                img {
+                    width: 136px;
+                }
+            }
+            .footer-menu-wrapper {
+                margin-top: 35px;
+                padding-bottom: 24px;
+                .menu {
+                    .title {
+                        @include typography.title(16px, colors.$text-light);
+                        margin-bottom: 16px;
+                    }
+                    .social-wrapper {
+                        .social-link {
+                            .icon {
+                                width: 30px;
+                            }
+                        }
+                    }
+                    .menu-items {
+                        .menu-item {
+                            margin: 13px 0px;
+                            a {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-text {
+                font-size: 16px;
+                margin: 16px;
+            }
+            .site-props {
+                margin-top: 24px;
+                .term-condition {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+                .lang-wrapper {
+                    img {
+                        height: 34px;
+                    }
+                    .dropdown-language {
+                        min-width: 200px;
+                        .language {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$sm) {
+            .footer-text {
+                font-size: 14px;
+                margin: 16px 0px;
+            }
         }
     }
     @include media-query.max(breakpoints.$md) {
@@ -125,10 +205,10 @@ footer {
             .site-props {
                 flex-direction: column;
                 .lang-wrapper {
-                    margin-top: 51px;
+                    margin-top: 24px;
                     border-top: solid 1px colors.$text-light;
                     width: 100%;
-                    padding-top: 51px;
+                    padding-top: 24px;
                 }
             }
         }

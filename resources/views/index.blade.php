@@ -12,25 +12,21 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
             />
-
-    
         <link rel="icon" href={{ asset('favicon.ico') }}>
         @vite([ 'resources/scss/app.scss'])
- 
     </head>
     <body>
       <nav class="nav">
         <div class="container">
-
             <div class="menu-wrapper">
-                <div class="brand">
+                <div class="nav-brand">
                     <a href="/">
                         <img src={{ asset('assets/images/logo.svg') }} alt="Graha Wisata Kita logo">
                     </a>
                 </div>
                 <ul class="nav-items">
                     <li>
-                        <a href="#" class="nav-item">Homepage</a>
+                        <a href="#" class="nav-item active">Homepage</a>
                     </li>
                     <li>
                         <a href="#" class="nav-item">Tentang</a>
@@ -47,10 +43,10 @@
                 <div class="lang-wrapper">
                     <button class="lang-dropdown">
                         <img src={{ asset('assets/images/ID.png') }} alt="Indonesia flag" class="flag">
-                        <span class="lang-text">Indonesia (ID)</span>
+                        <span class="lang-text">Indonesia ( ID )</span>
                         <img src={{ asset('assets/icons/ic-chevron-down.svg') }} alt="Indonesia flag" class="icon">
                     </button>
-                    <ul>
+                    <ul class="lang-list">
                         <li class="lang-header">
                             <span>Pilih Bahasa</span>
                             <button class="close-lang">X</button>
@@ -85,8 +81,8 @@
                             <span class="strip"></span>
                             <h6 class="text">HOTEL OPERATOR</h6>
                         </div>
-                        <h1>Membantu Menjalankan<br> Operasi Bisnis Pariwisata Anda</h1>
-                        <p>GWA membantu mengoperasikan keseluruhan layanan hotel, menajadikan mitra lebih percaya diri dalam menjalankan bisnis.</p>
+                        <h1 class="title">Membantu Menjalankan<br> Operasi Bisnis Pariwisata Anda</h1>
+                        <p class="paragraph">GWA membantu mengoperasikan keseluruhan layanan hotel, menajadikan mitra lebih percaya diri dalam menjalankan bisnis.</p>
                         <button class="cta-button">
                             Konsultasikan Bisnis Saya
                         </button>
@@ -103,7 +99,7 @@
                 <span class="strip"></span>
                 <h6 class="text">OUR WORKFLOW</h6>
             </div>
-            <h2 class="title">Proses Kerja Kami dalam Meningkatkan Kualitas Properti</h2>
+            <h2 class="title">Proses Kerja Kami dalam<br> Meningkatkan Kualitas Properti</h2>
 
             <div class="workflow-items">
                 <div class="workflow-item">
@@ -111,7 +107,7 @@
                         <img src={{ asset('/assets/images/challenge.svg') }} alt="" class="workflow-icon">
                     </div>
                     <div class="workflow-text-wrapper">
-                        <h3>Tantangan</h3>
+                        <h3 class="workflow-title">Tantangan</h3>
                         <p class="paragraph">Setiap property memiliki tantangan tersendiri dan GWA sangat memahami hal tersebut.</p>
                     </div>
                 </div>
@@ -120,7 +116,7 @@
                         <img src={{ asset('/assets/images/formulation.svg') }} alt="" class="workflow-icon">
                     </div>
                     <div class="workflow-text-wrapper">
-                        <h3>Rumusan</h3>
+                        <h3 class="workflow-title">Rumusan</h3>
                         <p class="paragraph">Setiap tantangan akan dirumuskan menjadi sebuah hal yang harus dicari jalan keluarnya oleh kami</p>
                     </div>
                 </div>
@@ -129,7 +125,7 @@
                         <img src={{ asset('/assets/images/goals.svg') }} alt="" class="workflow-icon">
                     </div>
                     <div class="workflow-text-wrapper">
-                        <h3>Goals</h3>
+                        <h3 class="workflow-title">Goals</h3>
                         <p class="paragraph">Dari rumusan masalah, kami memberikan respon cepat dan jalan keluar jangka pendek - menengah - panjang.</p>
                     </div>
                 </div>
@@ -138,7 +134,7 @@
                         <img src={{ asset('/assets/images/ideas.svg') }} alt="" class="workflow-icon">
                     </div>
                     <div class="workflow-text-wrapper">
-                        <h3>Ideas</h3>
+                        <h3 class="workflow-title">Ideas</h3>
                         <p class="paragraph">Setiap rumusan menjadikan ide-ide kreatif bagi kami untuk meningkatkan kualitas property mitra.</p>
                     </div>
                 </div>
@@ -199,41 +195,41 @@
                     </div>
                     <h2 class="title">Project Terbaru Kami</h2>
                 </div>
-                <div class="swiper project-items">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide project-item">
-                            <img src={{ asset('assets/images/project-image.png') }} alt="Twonhouse Oak" class="project-image">
-                            <div class="project-content">
-                                <span class="subtitle">1/4 OPERATIONAL PROJECT</span>
-                                <h1 class="title">Twonhouse Oak</h1>
-                                <span class="description">Brand tertinggi di OYO</span>
-                                <div class="project-detail">
-                                       <a href="#" class="button-detail">
-                                            <img src={{ asset('assets/icons/ic-chevron-right-light.svg') }} alt="chevron right icon">
-                                             Lihat Detail
-                                       </a>
+                <div class="swiper-container">
+                    <div class="swiper project-items">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide project-item">
+                                <img src={{ asset('assets/images/project-image.png') }} alt="Twonhouse Oak" class="project-image">
+                                <div class="project-content">
+                                    <span class="subtitle">1/4 OPERATIONAL PROJECT</span>
+                                    <h1 class="title">Twonhouse Oak</h1>
+                                    <span class="description">Brand tertinggi di OYO</span>
+                                    <div class="project-detail">
+                                           <a href="#" class="button-detail">
+                                                <img src={{ asset('assets/icons/ic-chevron-right-light.svg') }} alt="chevron right icon">
+                                                 Lihat Detail
+                                           </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide project-item">
+                                <img src={{ asset('assets/images/project-image.png') }} alt="Twonhouse Oak" class="project-image">
+                                <div class="project-content">
+                                    <span class="subtitle">1/4 OPERATIONAL PROJECT</span>
+                                    <h1 class="title">Twonhouse Oak</h1>
+                                    <span class="description">Brand tertinggi di OYO</span>
+                                    <div class="project-detail">
+                                           <a href="#" class="button-detail">
+                                                <img src={{ asset('assets/icons/ic-chevron-right-light.svg') }} alt="chevron right icon">
+                                                 Lihat Detail
+                                           </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide project-item">
-                            <img src={{ asset('assets/images/project-image.png') }} alt="Twonhouse Oak" class="project-image">
-                            <div class="project-content">
-                                <span class="subtitle">1/4 OPERATIONAL PROJECT</span>
-                                <h1 class="title">Twonhouse Oak</h1>
-                                <span class="description">Brand tertinggi di OYO</span>
-                                <div class="project-detail">
-                                       <a href="#" class="button-detail">
-                                            <img src={{ asset('assets/icons/ic-chevron-right-light.svg') }} alt="chevron right icon">
-                                             Lihat Detail
-                                       </a>
-                                </div>
-                            </div>
-                        </div>
-                       
-                       
                     </div>
-                     <div class="swpiper-button swiper-button-next"></div>
-                    <div class="swpiper-button swiper-button-prev"></div>
+                    <div class="swpiper-button next swiper-button-next"></div>
+                    <div class="swpiper-button prev swiper-button-prev"></div>
                 </div>
             </div>
         </section>
@@ -250,8 +246,8 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testimonial-content">
+                                <img src={{ asset('assets/icons/ic-quotes.svg') }} alt="icon quotes" class="icon-quotes">
                                 <div class="quotes">
-                                    <img src={{ asset('assets/icons/ic-quotes.svg') }} alt="icon quotes">
                                     <p class="paragraph">
                                         GWA Group membantu hotel
                                         saya untuk menjangkau lebih banyak 
@@ -259,8 +255,8 @@
                                         yang tidak pernah saya bayangkan sebelumnya
                                     </p>
                                 </div>
+                              <img src={{ asset('assets/images/yellow-hotel-logo.svg') }} alt="client image" class="client-avatar">
                                 <div class="client">
-                                    <img src={{ asset('assets/images/yellow-hotel-logo.svg') }} alt="client image">
                                     <div>
                                         <h5 class="title">Chaim Desmond</h5>
                                         <p class="description">CEO of Yellow Hotel</p>
@@ -270,8 +266,8 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="testimonial-content">
+                                <img src={{ asset('assets/icons/ic-quotes.svg') }} alt="icon quotes" class="icon-quotes">
                                 <div class="quotes">
-                                    <img src={{ asset('assets/icons/ic-quotes.svg') }} alt="icon quotes">
                                     <p class="paragraph">
                                         GWA Group membantu hotel
                                         saya untuk menjangkau lebih banyak 
@@ -279,10 +275,10 @@
                                         yang tidak pernah saya bayangkan sebelumnya
                                     </p>
                                 </div>
+                                <img src={{ asset('assets/images/yellow-hotel-logo.svg') }} alt="client image" class="client-avatar">
                                 <div class="client">
-                                    <img src={{ asset('assets/images/yellow-hotel-logo.svg') }} alt="client image">
                                     <div>
-                                        <h5 class="title">Chaim Desmond 2</h5>
+                                        <h5 class="title">Chaim Desmond</h5>
                                         <p class="description">CEO of Yellow Hotel</p>
                                     </div>
                                 </div>
@@ -295,10 +291,10 @@
                     <div class="inner-image">
                         <div class="button-wrapper">
                             <div class="button-group">
-                                <button class="testimonial-button-next">
+                                <button class="testimonial-button-next ">
                                     <img src={{ asset('assets/icons/ic-chevron-left-light.svg') }} alt="icon arrow left">
                                 </button>
-                                <button class="testimonial-button-prev">
+                                <button class="testimonial-button-prev ">
                                     <img src={{ asset('assets/icons/ic-chevron-right-light.svg') }} alt="icon arrow right">
                                 </button>
                             </div>
@@ -331,7 +327,7 @@
                         </div>
                          <div class="input-wrapper">
                             <label for="whatsapp_number">Nomor Whatsapp Aktif</label>
-                            <input type="text" name="whatsapp_number" id="whatsapp_number" placeholder="Masukkan Nomor Whatsapp">
+                            <input type="text" name="whatsapp_number" id="whatsapp_number" placeholder="ex. 621234567890">
                         </div>
                         <button type="submit" class="button-submit">
                             Jadwalkan Konsultasi
@@ -379,14 +375,17 @@
                 </div>
                  <div class="menu">
                     <h5 class="title">Social Media</h5>
-                    <ul class="menu-items">
-                        <li class="menu-item">
-                            <a href="#">Bantuan</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Hubungi Kami</a>
-                        </li>
-                    </ul>
+                    <div class="social-wrapper">
+                        <a href="#" class="social-link">
+                            <img src={{ asset('assets/icons/ic-facebook.svg') }} alt="facebook icon" class="icon">
+                        </a>
+                         <a href="#" class="social-link">
+                            <img src={{ asset('assets/icons/ic-youtube.svg') }} alt="youtube icon" class="icon">
+                        </a>
+                           <a href="#" class="social-link">
+                            <img src={{ asset('assets/icons/ic-instagram.svg') }} alt="instagram icon" class="icon">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="site-props">
@@ -416,7 +415,7 @@
     <script>
         const swiper = new Swiper('.project-items', {
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 24,
             freeMode: false,
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -425,7 +424,7 @@
         });
         const testimonials = new Swiper('.testimonials', {
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 24,
             freeMode: false,
             navigation: {
                 nextEl: ".testimonial-button-next",

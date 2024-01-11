@@ -18,16 +18,14 @@
         .strip-text {
             @include typography.strip-text(17px, colors.$text);
         }
-
         .title {
-            @include typography.title(32px, colors.$text);
+            @include typography.title(34px, colors.$text);
         }
         .workflow-items {
             display: flex;
             justify-content: space-between;
             position: relative;
             gap: 32px;
-
             .rounded-icon-wrapper {
                 background-color: colors.$text-light;
                 padding: 24px;
@@ -36,14 +34,19 @@
                 width: max-content;
                 height: max-content;
                 border-radius: 100%;
-                box-shadow: 0px 0px 48px -10px rgba(250, 196, 104, 0.282);
+                box-shadow: 0px 0px 48px -10px rgba(250, 196, 104, 0.374);
             }
             .workflow-item {
+                padding: 0px;
                 .paragraph {
                     @include typography.paragraph(14px, colors.$text);
                 }
                 .workflow-icon {
-                    width: 100%;
+                    width: 97px;
+                }
+                .workflow-title {
+                    font-size: 34px;
+                    color: colors.$text;
                 }
             }
 
@@ -63,27 +66,75 @@
                 padding-top: 8%;
             }
         }
-
-        @include media-query.max(1630px) {
+        @include media-query.min(1800px) {
+            max-width: 1700px;
+            .strip-text {
+                @include typography.strip-text(23px, colors.$text);
+            }
+            .title {
+                @include typography.title(46px, colors.$text);
+            }
             .workflow-items {
+                .workflow-item {
+                    .paragraph {
+                        @include typography.paragraph(23px, colors.$text);
+                    }
+                    .workflow-title {
+                        font-size: 30px;
+                    }
+                }
                 .workflow-item:nth-child(1) {
-                    padding-top: 13%;
+                    padding-top: 160px;
                 }
 
                 .workflow-item:nth-child(2) {
-                    padding-top: 8%;
+                    padding-top: 100px;
                 }
 
                 .workflow-item:nth-child(3) {
-                    padding-top: 10%;
+                    padding-top: 100px;
                 }
                 .workflow-item:nth-child(4) {
-                  padding-top:1%;
+                    padding: 0px;
+                    position: relative;
+                    top: -32px;
                 }
             }
         }
 
-        @include media-query.max(1440px) {
+        @include media-query.max(1799px) {
+            .strip-text {
+                @include typography.strip-text(17px, colors.$text);
+            }
+            .title {
+                @include typography.title(34px, colors.$text);
+            }
+            .workflow-items {
+                .workflow-item {
+                    .paragraph {
+                        @include typography.paragraph(17px, colors.$text);
+                    }
+                    .workflow-title {
+                        font-size: 22px;
+                    }
+                }
+                .workflow-item:nth-child(1) {
+                    padding-top: 188px;
+                }
+
+                .workflow-item:nth-child(2) {
+                    padding-top: 120px;
+                }
+
+                .workflow-item:nth-child(3) {
+                    padding-top: 126px;
+                }
+                .workflow-item:nth-child(4) {
+                    padding-top: 0px;
+                }
+            }
+        }
+        @include media-query.max(1580px) {
             .workflow-items {
                 .workflow-item:nth-child(1) {
                     padding-top: 10%;
@@ -103,29 +154,71 @@
             }
         }
 
+        @include media-query.max(1440px) {
+            .workflow-items {
+                .workflow-item:nth-child(1) {
+                    padding-top: 98px;
+                }
+                .workflow-item:nth-child(2) {
+                    padding-top: 32px;
+                }
+
+                .workflow-item:nth-child(3) {
+                    padding-top: 48px;
+                }
+                .workflow-item:nth-child(4) {
+                    padding: 0px;
+                    position: relative;
+                    top: -38px;
+                }
+            }
+        }
+
         @include media-query.max(breakpoints.$xl) {
             .title {
                 @include typography.title(20px, colors.$text);
             }
+            .strip-text {
+                @include typography.strip-text(14px, colors.$text);
+            }
             .workflow-items {
+                .workflow-item {
+                    .workflow-icon {
+                        width: 67px;
+                    }
+                    .paragraph {
+                        @include typography.paragraph(14px, colors.$text);
+                    }
+                    .workflow-title {
+                        font-size: 20px;
+                    }
+                }
                 .workflow-item:nth-child(1) {
-                    padding-top: 14%;
+                    padding-top: 180px;
                 }
 
                 .workflow-item:nth-child(2) {
-                    padding-top: 12%;
+                    padding-top: 148px;
                 }
 
                 .workflow-item:nth-child(3) {
-                    padding-top: 10%;
+                    padding-top: 148px;
                 }
                 .workflow-item:nth-child(4) {
-                    padding-top: 9%;
+                    padding-top: 80px;
                 }
             }
         }
         @include media-query.max(breakpoints.$lg) {
             .workflow-items {
+                .workflow-item {
+                    .paragraph {
+                        @include typography.paragraph(12px, colors.$text);
+                    }
+                    .workflow-title {
+                        font-size: 16px;
+                    }
+                }
                 .workflow-item:nth-child(1) {
                     position: relative;
                     top: -56px;
@@ -138,11 +231,55 @@
 
                 .workflow-item:nth-child(3) {
                     position: relative;
-                    top: -48px;
+                    top: -58px;
                 }
                 .workflow-item:nth-child(4) {
                     position: relative;
-                    top: -120px;
+                    top: -70px;
+                }
+            }
+        }
+
+        @include media-query.max(breakpoints.$md) {
+            .workflow-items {
+                flex-direction: column;
+                gap: 0px;
+                margin-top: 72px;
+                position: static;
+                padding: 0px;
+                .workflow-item {
+                    position: static;
+                    display: flex;
+                    justify-items: center;
+                    gap: 16px;
+                    .paragraph {
+                        @include typography.paragraph(16px, colors.$text);
+                    }
+                    .workflow-title {
+                        font-size: 19px;
+                    }
+                }
+                .workflow-item:nth-child(1) {
+                    position: static;
+                    padding: 0px;
+                    top: 0px;
+                }
+
+                .workflow-item:nth-child(2) {
+                    position: static;
+                    padding: 0px;
+                    top: 0px;
+                }
+
+                .workflow-item:nth-child(3) {
+                    position: static;
+                    padding: 0px;
+                    top: 0px;
+                }
+                .workflow-item:nth-child(4) {
+                    position: static;
+                    padding: 0px;
+                    top: 0px;
                 }
             }
         }
@@ -157,24 +294,6 @@
 
     @include media-query.max(breakpoints.$md) {
         background-image: none;
-        .container {
-            .workflow-items {
-                flex-direction: column;
-                gap: 0px;
-                margin-top: 40px;
-                .workflow-item {
-                    position: static;
-                    padding: 0px;
-                    top: 0px;
-                    display: flex;
-                    justify-items: center;
-                    gap: 16px;
-                }
-                .workflow-item:nth-child(4) {
-                    top: 0px;
-                }
-            }
-        }
     }
 }
 
@@ -192,26 +311,28 @@
         margin: 0px auto;
         .strip-text {
             @include typography.strip-text(17px, colors.$text);
+            font-size: 600;
         }
         .title {
-            @include typography.title(32px, colors.$text);
+            @include typography.title(35px, colors.$text);
+            margin-top: 24px;
         }
-
         .service-items {
             overflow-y: hidden;
             overflow-x: scroll;
             display: grid;
             grid-template-columns: repeat(3, minmax(min(240px, 100%), 1fr));
             gap: 32px;
+            height: max-content;
             scrollbar-width: none;
             .service-item {
                 padding: 37px 40px;
                 background-color: colors.$text-light;
-                height: auto;
                 border-radius: 24px;
+                height: max-content;
                 border: solid 1px colors.$border;
-
                 min-width: 220px;
+                margin-top: 26px;
                 .service-header {
                     display: flex;
                     width: 100%;
@@ -220,20 +341,24 @@
                     .service-number {
                         text-align: end;
                         color: colors.$warning;
-                        font-size: 26px;
+                        font-size: 32px;
                     }
                     img {
-                        width: 124px;
+                        width: 50%;
                     }
                 }
                 .service-title {
-                    @include typography.title(18px, colors.$text);
+                    @include typography.title(26px, colors.$text);
+                    font-weight: 500 !important;
                 }
                 .button-primary {
                     gap: 14px;
                     display: flex;
+                    font-weight: 400;
                     align-items: center;
                     white-space: nowrap;
+                    font-size: 17px;
+                    height: max-content;
                     img {
                         width: 24px;
                     }
@@ -248,6 +373,15 @@
                     padding: 24px;
                     .button-primary {
                         font-size: 14px;
+                        padding: 6px 24px;
+                    }
+                    .service-title {
+                        font-size: 18px;
+                    }
+                    .service-header {
+                        .service-number {
+                            font-size: 26px;
+                        }
                     }
                 }
                 @include media-query.max(breakpoints.$lg) {
@@ -264,6 +398,46 @@
         }
         .service-items::-webkit-scrollbar {
             display: none;
+        }
+
+        @include media-query.min(1800px) {
+            max-width: 1700px;
+            .strip-text {
+                @include typography.strip-text(23px, colors.$text);
+            }
+            .title {
+                @include typography.title(48px, colors.$text);
+            }
+
+            .service-items {
+                margin-top: 70px;
+                .service-item {
+                    .service-header {
+                        .service-number {
+                            font-size: 42px;
+                        }
+                    }
+                    .service-title {
+                        @include typography.title(35px, colors.$text);
+                    }
+                    .button-primary {
+                        gap: 19px;
+                        font-size: 23px;
+                        padding: 14px 40px;
+                        img {
+                            width: 26px;
+                        }
+                    }
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$xl) {
+            .strip-text {
+                @include typography.strip-text(14px, colors.$text);
+            }
+            .title {
+                @include typography.title(20px, colors.$text);
+            }
         }
         @include media-query.max(breakpoints.$lg) {
             padding: 0px 40px;
@@ -284,104 +458,313 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            margin-bottom: 58px;
+            margin-bottom: 68px;
             .strip-text {
                 @include typography.strip-text(17px, colors.$text);
             }
             .title {
-                @include typography.title(32px, colors.$text);
+                @include typography.title(40px, colors.$text);
             }
         }
-        .project-items {
+        .swiper-container {
+            position: relative;
+            padding: 0px 40px;
             .swpiper-button {
                 background-color: colors.$warning;
-                width: 48px;
-                height: 48px;
+                width: 88px;
+                height: 88px;
                 padding: 8px;
-                border-radius: 48px;
+                border-radius: 88px;
                 color: colors.$text;
+                position: absolute;
+                top: 44%;
+                z-index: 3;
             }
-            .swiper-button-next {
-                right: 4px;
+            .prev {
+                left: -8px;
             }
-            .swiper-button-prev {
-                left: 4px;
+            .prev.swiper-button-disabled {
+                opacity: 1;
+                background-color: colors.$warning-light;
             }
-            .swiper-wrapper {
-                height: max-content;
-                .project-item {
-                    width: 100%;
-                    position: relative;
-                    .project-image {
-                        filter: opacity(0.2);
+            .next {
+                right: -8px;
+            }
+            .next.swiper-button-disabled {
+                opacity: 1;
+                background-color: colors.$warning-light;
+            }
+            .project-items {
+                .swiper-wrapper {
+                    height: max-content;
+                    .project-item {
                         width: 100%;
-                        border-radius: 52px;
-                        min-height: 220px;
-                        object-fit: cover;
-                    }
-                    .project-content {
-                        border-radius: 52px;
-                        position: absolute;
-                        flex-direction: column;
-                        top: 0px;
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        align-items: start;
-                        justify-content: center;
-                        padding: 24px 110px;
-                        text-align: left;
-                        box-sizing: border-box;
-                        .title {
-                            @include typography.title(40px, colors.$text);
-                            margin: 0px;
-                        }
-                        .subtitle {
-                            @include typography.subtitle(18px, colors.$text);
-                        }
-                        .description {
-                            @include typography.paragraph(28px, colors.$text);
-                        }
-                        .project-detail {
-                            display: flex;
+                        position: relative;
+                        .project-image {
+                            filter: opacity(0.2);
                             width: 100%;
-                            justify-content: end;
+                            border-radius: 52px;
+                            min-height: 380px;
+                            object-fit: cover;
                         }
-                        .button-detail {
+                        .project-content {
+                            border-radius: 52px;
+                            position: absolute;
+                            flex-direction: column;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
                             display: flex;
-                            align-items: center;
-                            gap: 16px;
-                            font-size: 24px;
-                            color: colors.$text;
-                            img {
-                                width: 36px;
-                                border-radius: 36px;
-                                padding: 8px;
-                                background-color: colors.$text;
-                            }
-                        }
-                        @include media-query.max(breakpoints.$lg) {
+                            align-items: start;
+                            justify-content: center;
+                            padding: 24px 110px;
+                            text-align: left;
+                            box-sizing: border-box;
                             .title {
-                                font-size: 26px;
+                                @include typography.title(53px, colors.$text);
+                                margin-top: 26px;
+                                margin-bottom: 20px;
+                                line-height: 100%;
                             }
                             .subtitle {
-                                font-size: 16px;
+                                @include typography.subtitle(
+                                    22px,
+                                    colors.$text
+                                );
+                                font-weight: 500;
+                                line-height: 100%;
                             }
                             .description {
-                                font-size: 18px;
+                                @include typography.paragraph(
+                                    32px,
+                                    colors.$text
+                                );
+                                line-height: 100%;
+                            }
+                            .project-detail {
+                                display: flex;
+                                width: 100%;
+                                justify-content: end;
                             }
                             .button-detail {
-                                font-size: 18px;
+                                display: flex;
+                                position: absolute;
+                                bottom: 67px;
+                                align-items: center;
+                                gap: 16px;
+                                font-size: 28px;
+                                color: colors.$text;
                                 img {
-                                    width: 18px;
+                                    width: 36px;
+                                    border-radius: 36px;
+                                    padding: 8px;
+                                    background-color: colors.$text;
                                 }
                             }
                         }
-                        @include media-query.max(breakpoints.$sm) {
-                            padding-right: 24px;
-                            padding-left: 72px;
+                    }
+                }
+            }
+            @include media-query.min(1800px) {
+                .swpiper-button {
+                    width: 130px;
+                    height: 130px;
+                    top: 40%;
+                    border-radius: 130px;
+                }
+                .prev {
+                    left: -32px;
+                }
+                .next {
+                    right: -32px;
+                }
+                .project-items {
+                    .swiper-wrapper {
+                        .project-item {
+                            .project-content {
+                                .title {
+                                    @include typography.title(
+                                        70px,
+                                        colors.$text
+                                    );
+                                }
+                                .subtitle {
+                                    @include typography.subtitle(
+                                        28px,
+                                        colors.$text
+                                    );
+                                }
+                                .description {
+                                    @include typography.paragraph(
+                                        43px,
+                                        colors.$text
+                                    );
+                                }
+                            }
                         }
                     }
+                }
+            }
+            @include media-query.max(breakpoints.$xxl) {
+                .project-items {
+                    .swiper-wrapper {
+                        .project-item {
+                            .project-content {
+                                .button-detail {
+                                    bottom: 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include media-query.max(breakpoints.$xl) {
+                .swpiper-button {
+                    width: 60px;
+                    height: 60px;
+                    top: 50%;
+                    border-radius: 60px;
+                }
+                .prev {
+                    left: 8px;
+                }
+                .next {
+                    right: 8px;
+                }
+                .project-items {
+                    .swiper-wrapper {
+                        .project-item {
+                            .project-content {
+                                .title {
+                                    @include typography.title(
+                                        36px,
+                                        colors.$text
+                                    );
+                                    margin-top: 10px;
+                                    margin-bottom: 12px;
+                                    line-height: 100%;
+                                }
+                                .subtitle {
+                                    @include typography.subtitle(
+                                        17px,
+                                        colors.$text
+                                    );
+                                    margin: 0px;
+                                }
+                                .description {
+                                    @include typography.paragraph(
+                                        23px,
+                                        colors.$text
+                                    );
+                                    margin: 0px;
+                                }
+                                .button-detail {
+                                    font-size: 20px;
+                                    img {
+                                        width: 24px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include media-query.max(breakpoints.$md) {
+                padding: 0px;
+                .swpiper-button {
+                    width: 56px;
+                    height: 56px;
+                    padding: 8px;
+                    border-radius: 100%;
+                    top: 44%;
+                    z-index: 3;
+                    box-sizing: border-box;
+                }
+                .prev {
+                    left: 16px;
+                }
+                .next {
+                    right: 16px;
+                }
+
+                .project-items {
+                    .swiper-wrapper {
+                        .project-item {
+                            .project-image {
+                                filter: opacity(1);
+                                border-radius: 24px;
+                                box-sizing: border-box;
+                            }
+                            .project-content {
+                                box-sizing: border-box;
+                                background-color: rgba(255, 255, 255, 0.747);
+                                height: max-content;
+                                width: auto;
+                                top: auto;
+                                left: 16px;
+                                right: 16px;
+                                bottom: 16px;
+                                padding: 20px;
+                                border-radius: 12px;
+                                .title {
+                                    @include typography.title(
+                                        23px,
+                                        colors.$text
+                                    );
+                                    margin-top: 8px;
+                                    margin-bottom: 9px;
+                                    line-height: 100%;
+                                }
+                                .subtitle {
+                                    @include typography.subtitle(
+                                        13px,
+                                        colors.$text
+                                    );
+                                    margin: 0px;
+                                }
+                                .description {
+                                    @include typography.paragraph(
+                                        15px,
+                                        colors.$text
+                                    );
+                                    margin: 0px;
+                                }
+                                .project-detail {
+                                    margin-top: 8px;
+                                    gap: 8px;
+                                }
+                                .button-detail {
+                                    bottom: 28px;
+                                    font-size: 14px;
+                                    img {
+                                        width: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include media-query.min(1800px) {
+            max-width: 1700px;
+            .title-wrapper {
+                .strip-text {
+                    @include typography.strip-text(23px, colors.$text);
+                }
+                .title {
+                    @include typography.title(50px, colors.$text);
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$xxl) {
+            max-width: 1700px;
+            .title-wrapper {
+                .strip-text {
+                    @include typography.strip-text(17px, colors.$text);
+                }
+                .title {
+                    @include typography.title(35px, colors.$text);
                 }
             }
         }
@@ -394,8 +777,10 @@
                     padding: 12px;
                     border-radius: 48px;
                 }
+
                 .swiper-wrapper {
                     height: max-content;
+
                     .project-item {
                         .project-image {
                             border-radius: 32px;
@@ -406,9 +791,26 @@
                     }
                 }
             }
+            .title-wrapper {
+                margin-bottom: 40px;
+                .strip-text {
+                    @include typography.strip-text(14px, colors.$text);
+                }
+                .title {
+                    @include typography.title(23px, colors.$text);
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$md) {
+            .title-wrapper {
+                .strip-text {
+                    @include typography.strip-text(12px, colors.$text);
+                }
+            }
         }
     }
 }
+
 .contact-us {
     margin: 80px 0px;
     background-image: url("/public/assets/images/contact-pattern.svg");
@@ -434,14 +836,12 @@
                 @include typography.strip-text(17px, colors.$text);
             }
             .title {
-                @include typography.title(32px, colors.$text);
+                @include typography.title(34px, colors.$text);
             }
-
             .paragraph {
-                @include typography.paragraph(16px, colors.$text);
+                @include typography.paragraph(20px, colors.$text);
             }
         }
-
         .form-wrapper {
             padding: 0px 36px;
             form {
@@ -451,23 +851,43 @@
             }
 
             .button-submit {
+                font-size: 19px;
+                font-weight: 500;
                 img {
                     width: 32px;
                 }
             }
         }
-    }
-    @include media-query.max(breakpoints.$xl) {
-        .container {
+        @include media-query.min(1800px) {
+            max-width: 1700px;
+            .form-wrapper {
+                .button-submit {
+                    font-size: 26px;
+                    padding: 24px 0px;
+                    border-radius: 72px;
+                    margin-top: 50px;
+                }
+            }
+            .text-wrapper {
+                .strip-text {
+                    @include typography.strip-text(23px, colors.$text);
+                }
+                .title {
+                    @include typography.title(48px, colors.$text);
+                }
+                .paragraph {
+                    @include typography.paragraph(27px, colors.$text);
+                }
+            }
+        }
+        @include media-query.max(breakpoints.$xl) {
             padding: 0px 40px;
             .form-wrapper {
                 padding: 0px;
             }
         }
-    }
 
-    @include media-query.max(breakpoints.$lg) {
-        .container {
+        @include media-query.max(breakpoints.$lg) {
             padding: 0px 40px;
             .form-wrapper {
                 padding: 0px;
@@ -490,6 +910,7 @@
 
 .testimonial {
     background-color: colors.$light;
+    height: max-content;
     .container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -501,42 +922,46 @@
             @include typography.strip-text(17px, colors.$text);
         }
         .title {
-            @include typography.title(32px, colors.$text);
+            @include typography.title(37px, colors.$text);
         }
         .testimonial-detail-wrapper {
             height: max-content;
             .testimonial-content {
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-template-columns: 98px 1fr;
+                grid-template-rows: max-content max-content;
+                gap: 58px 24px;
                 .quotes {
                     display: flex;
                     align-items: start;
                     gap: 24px;
-                    img {
-                        margin-top: 12px;
-                        width: 40px;
-                    }
                     .paragraph {
-                        @include typography.paragraph(17px, colors.$text);
+                        @include typography.paragraph(26px, colors.$text);
                         max-width: 58ch;
                     }
                 }
             }
-        }
-        .client {
-            margin-top: 58px;
-            display: flex;
-            gap: 16px;
-            .title {
-                font-size: 21px;
-                padding: 0px;
-                margin: 0px;
-                font-weight: 500;
+            .icon-quotes {
+                margin-top: 16px;
+                margin-left: auto;
             }
-            .description {
-                font-size: 17px;
-                font-weight: 300;
+            .client {
+                display: flex;
+                gap: 16px;
+                .title {
+                    font-size: 27px;
+                    padding: 0px;
+                    margin: 0px;
+                    font-weight: 500;
+                }
+                .description {
+                    font-size: 27px;
+                    font-weight: 300;
+                }
             }
-            img {
-                width: 56px;
+            .client-avatar {
+                width: 98px;
                 aspect-ratio: 1/1;
             }
         }
@@ -547,22 +972,37 @@
                 right: 0;
                 .button-wrapper {
                     position: absolute;
-                    left: -64px;
+                    left: -89px;
                     top: 72px;
                     width: 120px;
                     .button-group {
-                        background-color: colors.$primary;
                         width: max-content;
-                        padding: 8px 16px;
-                        border-radius: 64px;
+                        display: flex;
+                        background-color: colors.$primary;
+                        border-radius: 100%;
                         button {
                             background-color: colors.$primary;
                             margin: 0px;
-                            padding: 0px;
+                            padding: 14px 21px;
                             border: none;
+                            height: 100%;
+                            width: 100%;
+                            aspect-ratio: 1/1;
                             img {
                                 width: 48px;
                             }
+                        }
+                        .testimonial-button-prev {
+                            border-radius: 0 100% 100% 0;
+                        }
+                        .testimonial-button-next {
+                            border-radius: 100% 0 0 100%;
+                        }
+                        .testimonial-button-prev.swiper-button-disabled {
+                            background-color: colors.$secondary;
+                        }
+                        .testimonial-button-next.swiper-button-disabled {
+                            background-color: colors.$secondary;
                         }
                     }
                 }
@@ -573,6 +1013,7 @@
                     border-radius: 40px 0px 0px 40px;
                 }
             }
+
             @include media-query.max(breakpoints.$md) {
                 height: auto;
                 display: flex;
@@ -585,18 +1026,79 @@
                 }
             }
         }
+        @include media-query.min(1800px) {
+            max-width: 1700px;
+            .strip-text {
+                @include typography.strip-text(23px, colors.$text);
+            }
+            .title {
+                @include typography.title(50px, colors.$text);
+            }
+        }
+        @include media-query.max(breakpoints.$xxl) {
+            .testimonial-detail-wrapper {
+                .testimonial-content {
+                    grid-template-columns: 68px 1fr;
+                    .quotes {
+                        .paragraph {
+                            @include typography.paragraph(20px, colors.$text);
+                        }
+                    }
+                    .client {
+                        .title {
+                            font-size: 22px;
+                        }
+                        .description {
+                            font-size: 22px;
+                        }
+                    }
+                    .client-avatar {
+                        width: 68px;
+                        aspect-ratio: 1/1;
+                    }
+                }
+            }
+        }
         @include media-query.max(breakpoints.$xl) {
             padding: 59px 40px;
             .title {
-                @include typography.title(21px, colors.$text);
+                @include typography.title(23px, colors.$text);
             }
+            .strip-text {
+                @include typography.strip-text(14px, colors.$text);
+            }
+            .testimonial-detail-wrapper {
+                height: max-content;
+                .testimonial-content {
+                    grid-template-columns: 68px 1fr;
+                    gap: 32px 16px;
+                    .quotes {
+                        .paragraph {
+                            @include typography.paragraph(17px, colors.$text);
+                        }
+                    }
+                }
+                .client {
+                    .title {
+                        font-size: 17px;
+                    }
+                    .description {
+                        font-size: 17px;
+                    }
+                }
+                .client-avatar {
+                    width: 68px;
+                }
+                .icon-quotes {
+                    width: 32px;
+                }
+            }
+
             .testimonial-image-wrapper {
                 .inner-image {
                     .button-wrapper {
-                        top: 48px;
-                        left: -44px;
+                        left: -72px;
                         .button-group {
-                            padding: 6px 12px;
                             button {
                                 border: none;
                                 img {
